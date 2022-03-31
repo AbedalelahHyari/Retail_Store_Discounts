@@ -1,8 +1,14 @@
 package com.store.discounts.user;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
+
     private Integer id;
     private String name;
     private String email;
@@ -10,25 +16,25 @@ public class User {
     private Integer age;
     private Boolean isEmployee;
 
-    public User() {
-    }
-
-    public User(Integer id, String name, String email, LocalDate dob, Integer age, Boolean isEmployee) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.dob = dob;
-        this.age = age;
-        this.isEmployee = isEmployee;
-    }
+//    public User() {
+//    }
 
     public User(String name, String email, LocalDate dob, Integer age, Boolean isEmployee) {
+
         this.name = name;
         this.email = email;
         this.dob = dob;
         this.age = age;
         this.isEmployee = isEmployee;
     }
+
+//    public User(String name, String email, LocalDate dob, Integer age, Boolean isEmployee) {
+//        this.name = name;
+//        this.email = email;
+//        this.dob = dob;
+//        this.age = age;
+//        this.isEmployee = isEmployee;
+//    }
 
     public Integer getId() {
         return id;
