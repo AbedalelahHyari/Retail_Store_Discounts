@@ -4,20 +4,28 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
 
-    private Integer id;
+    private Long id;
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "email", nullable = false)
     private String email;
+
     private LocalDate dob;
+
     private Integer age;
+
     private Boolean isEmployee;
 
-//    public User() {
-//    }
+    public User() {
+    }
+
 
     public User(String name, String email, LocalDate dob, Integer age, Boolean isEmployee) {
 
@@ -36,11 +44,11 @@ public class User {
 //        this.isEmployee = isEmployee;
 //    }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
