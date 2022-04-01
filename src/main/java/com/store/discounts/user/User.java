@@ -23,6 +23,7 @@ public class User {
 
     private Boolean isEmployee;
 
+
     public User() {
     }
 

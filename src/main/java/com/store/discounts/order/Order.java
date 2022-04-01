@@ -10,21 +10,26 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "user", nullable = false)
+    ///////////////////////////////////////////////////////////////////////
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
     private User user;
-
+    ////////////////////////////////////////////////////////////////////
     @Column(name = "sub_total", nullable = false)
     private Integer subTotal;
-
+    /////////////////////////////////////////////////////////////////
     @Column(name = "discount_value", nullable = false)
     private Integer discount;
-
+    ///////////////////////////////////////////////////////////////
     @Column(name = "net_payable", nullable = false)
     private Integer TotalAmount;
 
+    ///////////////////////////////////////////////////////
     public Order() {
     }
 
+    /////////////////////////////////////////////////////
+    //Getter and Setter //
     public Long getId() {
         return id;
     }
