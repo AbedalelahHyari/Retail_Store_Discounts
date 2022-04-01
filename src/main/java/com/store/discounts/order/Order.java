@@ -11,25 +11,35 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     ///////////////////////////////////////////////////////////////////////
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
-    private User user;
+/*    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;*/
+    private String userName;
     ////////////////////////////////////////////////////////////////////
     @Column(name = "sub_total", nullable = false)
-    private Integer subTotal;
+    private Double subTotal;
     /////////////////////////////////////////////////////////////////
     @Column(name = "discount_value", nullable = false)
-    private Integer discount;
+    private Double discount;
     ///////////////////////////////////////////////////////////////
     @Column(name = "net_payable", nullable = false)
-    private Integer TotalAmount;
+    private Double TotalAmount;
 
-    ///////////////////////////////////////////////////////
+    /////////////////////////////////////////
     public Order() {
     }
 
-    /////////////////////////////////////////////////////
-    //Getter and Setter //
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", subTotal=" + subTotal +
+                ", discount=" + discount +
+                ", TotalAmount=" + TotalAmount +
+                '}';
+    }
+
     public Long getId() {
         return id;
     }
@@ -38,53 +48,42 @@ public class Order {
         this.id = id;
     }
 
-    public User getUser() {
-        return user;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public Integer getSubTotal() {
+    public Double getSubTotal() {
         return subTotal;
     }
 
-    public void setSubTotal(Integer subTotal) {
+    public void setSubTotal(Double subTotal) {
         this.subTotal = subTotal;
     }
 
-    public Integer getDiscount() {
+    public Double getDiscount() {
         return discount;
     }
 
-    public void setDiscount(Integer discount) {
+    public void setDiscount(Double discount) {
         this.discount = discount;
     }
 
-    public Integer getTotalAmount() {
+    public Double getTotalAmount() {
         return TotalAmount;
     }
 
-    public void setTotalAmount(Integer totalAmount) {
+    public void setTotalAmount(Double totalAmount) {
         TotalAmount = totalAmount;
     }
 
-    public Order(User user, Integer subTotal, Integer discount, Integer totalAmount) {
-        this.user = user;
+    public Order(String userName, Double subTotal, Double discount, Double totalAmount) {
+        this.userName = userName;
         this.subTotal = subTotal;
         this.discount = discount;
         TotalAmount = totalAmount;
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", user=" + user +
-                ", subTotal=" + subTotal +
-                ", discount=" + discount +
-                ", TotalAmount=" + TotalAmount +
-                '}';
     }
 }
