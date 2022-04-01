@@ -1,7 +1,5 @@
 package com.store.discounts.order;
 
-import com.store.discounts.user.User;
-
 import javax.persistence.*;
 
 @Entity
