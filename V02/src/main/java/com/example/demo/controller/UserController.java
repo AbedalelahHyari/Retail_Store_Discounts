@@ -10,7 +10,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin("*")
+/*
+@CrossOrigin("*" || origins ={"http://localhost:3000/"})
+this annotation it represents allow cross-origin resource sharing will allow to make a connection
+between two domains (http://localhost:8080 and http://localhost:3000)
+we use it when we make an axios request to backend server in our case will be http://localhost:8080
+*/
+
 @RestController
 @RequestMapping("/api/users")
 public class UserController {

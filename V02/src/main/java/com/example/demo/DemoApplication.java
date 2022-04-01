@@ -24,7 +24,7 @@ public class DemoApplication implements CommandLineRunner {
         userOne.setEmail("abed@gmail.com");
         userOne.setIsEmployee(true);
         userRepository.save(userOne);
-//////////////////////////////////////////////////
+    //============================================//
         User userTwo = new User();
         userTwo.setName("Bashar");
         userTwo.setEmail("bashar@gmail.com");
