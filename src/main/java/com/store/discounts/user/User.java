@@ -36,13 +36,6 @@ public class User {
         this.isEmployee = isEmployee;
     }
 
-//    public User(String name, String email, LocalDate dob, Integer age, Boolean isEmployee) {
-//        this.name = name;
-//        this.email = email;
-//        this.dob = dob;
-//        this.age = age;
-//        this.isEmployee = isEmployee;
-//    }
 
     public Long getId() {
         return id;
