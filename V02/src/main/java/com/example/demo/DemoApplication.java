@@ -29,7 +29,7 @@ public class DemoApplication implements CommandLineRunner {
         userOne.setEmail("abed@gmail.com");
         userOne.setIsEmployee(true);
         userRepository.save(userOne);
-*/
+
         User userTwo = new User();
         userTwo.setName("mohmmad");
         userTwo.setEmail("mohmmad@gmail.com");
@@ -46,7 +46,7 @@ public class DemoApplication implements CommandLineRunner {
         order_one.setUser(userTwo);
 
         orderRepository.save(order_one);
-        userRepository.save(userTwo);
+        userRepository.save(userTwo);*/
 
     }
 }
