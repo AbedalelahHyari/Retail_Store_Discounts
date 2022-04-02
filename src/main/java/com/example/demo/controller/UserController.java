@@ -18,7 +18,7 @@ we use it when we make an axios request to backend server in our case will be ht
 */
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping(path = "/api/users")
 public class UserController {
     @Autowired
     private UserRepository userRepository;
@@ -48,6 +48,7 @@ public class UserController {
     public ResponseEntity<User> getUserById(@PathVariable long id) {
         User user = userRepository.findById(id).orElseThrow(() -> new
                 ResourceNotFoundException("The user not found with id => " + id));
+        System.out.println(user);
         return ResponseEntity.ok(user);
     }
 

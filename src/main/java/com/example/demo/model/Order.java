@@ -17,19 +17,21 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     ///////////////////////////////////////////////////////////////////////
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+
+//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    @JoinColumn(name = "user_id")
+//    private User user;
 
     ////////////////////////////////////////////////////////////////////
     @Column(name = "sub_total", nullable = false)
-    private Double subTotal;
+    private Integer subTotal;
     /////////////////////////////////////////////////////////////////
     @Column(name = "discount_value", nullable = false)
-    private Double discount;
+    private Double discountValue;
     ///////////////////////////////////////////////////////////////
-    @Column(name = "net_payable", nullable = false)
-    private Double TotalAmount;
+    @Column(name = "net_payable")
+    private Integer totalAmount;
 
 }
