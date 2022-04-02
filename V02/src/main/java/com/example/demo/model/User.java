@@ -27,5 +27,7 @@ public class User {
 
     @Column(name = "is_employee")
     private Boolean isEmployee = false;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "user")
+    private Order order;
 
 }
