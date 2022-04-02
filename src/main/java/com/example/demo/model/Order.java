@@ -18,12 +18,6 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    ///////////////////////////////////////////////////////////////////////
-
-//    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    @JoinColumn(name = "user_id")
-//    private User user;
-
     ////////////////////////////////////////////////////////////////////
     @Column(name = "sub_total", nullable = false)
     private Integer subTotal;
